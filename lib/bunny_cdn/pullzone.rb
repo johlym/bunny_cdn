@@ -11,7 +11,7 @@ module BunnyCdn
 
     def self.headers
       {
-        :access_key => api_key,
+        :AccessKey => api_key,
         :accept => 'application/json',
         :content_type => 'application/json'
       }
