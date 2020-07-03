@@ -5,13 +5,13 @@ module BunnyCdn
 
     BASE_URL = 'https://bunnycdn.com/api/pullzone'
 
-    def self.apiKey
-      @apiKey = BunnyCdn.configuration.apiKey
+    def self.api_key
+      @api_key = BunnyCdn.configuration.api_key
     end
 
     def self.headers
       {
-        :accesskey => apiKey,
+        :access_key => api_key,
         :accept => 'application/json',
         :content_type => 'application/json'
       }

@@ -5,23 +5,23 @@ module BunnyCdn
 
     BASE_URL = 'https://storage.bunnycdn.com'
 
-    def self.storageZone
-      BunnyCdn.configuration.storageZone
+    def self.storage_zone
+      BunnyCdn.configuration.storage_zone
     end
 
-    def self.apiKey
-      BunnyCdn.configuration.accessKey
+    def self.api_key
+      BunnyCdn.configuration.access_key
     end
 
     def self.headers
       {
-        :accesskey => apiKey
+        :access_key => api_key
       }
     end
 
     def self.getZoneFiles(path= '')
       begin
-        response = RestClient.get("#{BASE_URL}/#{storageZone}/#{path}", headers)
+        response = RestClient.get("#{BASE_URL}/#{storage_zone}/#{path}", headers)
       rescue RestClient::ExceptionWithResponse => exception
         return exception
       end
@@ -30,7 +30,7 @@ module BunnyCdn
 
     def self.getFile(path= '', file)
       begin
-        response = RestClient.get("#{BASE_URL}/#{storageZone}/#{path}/#{file}", headers)
+        response = RestClient.get("#{BASE_URL}/#{storage_zone}/#{path}/#{file}", headers)
       rescue RestClient::ExceptionWithResponse => exception
         return exception
       end
@@ -40,11 +40,11 @@ module BunnyCdn
     def self.uploadFile(path= '', file)
       fileName = File.basename(file)
       headers = {
-        :accessKey => apiKey,
+        :access_key => api_key,
         :checksum => ''
       }
       begin
-        response = RestClient.put("#{BASE_URL}/#{storageZone}/#{path}/#{fileName}", File.read(file), headers)
+        response = RestClient.put("#{BASE_URL}/#{storage_zone}/#{path}/#{fileName}", File.read(file), headers)
       rescue RestClient::ExceptionWithResponse => exception
         return exception
       end
@@ -53,7 +53,7 @@ module BunnyCdn
 
     def self.deleteFile(path= '', file)
       begin
-        response = RestClient.delete("#{BASE_URL}/#{storageZone}/#{path}/#{file}", headers)
+        response = RestClient.delete("#{BASE_URL}/#{storage_zone}/#{path}/#{file}", headers)
       rescue RestClient::ExceptionWithResponse => exception
         return exception
       end

@@ -32,9 +32,9 @@ Create the initializer `config/initializers/bunny_cdn.rb` and set the configurat
 
 ```ruby
 BunnyCdn.configure do |config|
-    config.apiKey = # The API key for your BunnyCDN account
-    config.storageZone = # The storage zone you want to work with
-    config.accessKey = # The password for your storage zone
+    config.api_key = # The API key for your BunnyCDN account
+    config.storage_zone = # The storage zone you want to work with
+    config.access_key = # The password for your storage zone
 end
 ```
 

@@ -3,13 +3,13 @@ require 'spec_helper'
 RSpec.describe BunnyCdn::Pullzone do
   before(:each) do
     BunnyCdn.configure do |config|
-      config.apiKey = ENV['API_KEY']
+      config.api_key = ENV['API_KEY']
     end
     headers = 
     {
       :content_type => 'application/json', 
       :accept => 'application/json',
-      :accesskey => BunnyCdn.configuration.apiKey
+      :access_key => BunnyCdn.configuration.api_key
     }
   end
 
@@ -20,7 +20,7 @@ RSpec.describe BunnyCdn::Pullzone do
           headers: {
             :content_type => 'application/json',
             :accept => 'application/json',
-            :accessKey => BunnyCdn.configuration.apiKey
+            :access_key => BunnyCdn.configuration.api_key
           }).to_return(status: 200)
     end
     it "gets all pullzones" do
@@ -29,7 +29,7 @@ RSpec.describe BunnyCdn::Pullzone do
         with(headers: {
         :content_type => 'application/json', 
         :accept => 'application/json',
-        :accesskey => BunnyCdn.configuration.apiKey
+        :access_key => BunnyCdn.configuration.api_key
         }).once
     end
   end
@@ -41,7 +41,7 @@ RSpec.describe BunnyCdn::Pullzone do
           headers: {
             :content_type => 'application/json',
             :accept => 'application/json',
-            :accessKey => BunnyCdn.configuration.apiKey
+            :access_key => BunnyCdn.configuration.api_key
           },
           body: {
             :name => 'test',
@@ -56,7 +56,7 @@ RSpec.describe BunnyCdn::Pullzone do
         headers: {
           :content_type => 'application/json',
           :accept => 'application/json',
-          :accessKey => BunnyCdn.configuration.apiKey
+          :access_key => BunnyCdn.configuration.api_key
         },
         body: {
           :name => 'test',
@@ -73,7 +73,7 @@ RSpec.describe BunnyCdn::Pullzone do
           headers: {
             :content_type => 'application/json',
             :accept => 'application/json',
-            :accessKey => BunnyCdn.configuration.apiKey
+            :access_key => BunnyCdn.configuration.api_key
           }).to_return(status: 200)
     end
     it "gets a single pullzone by ID" do
@@ -83,7 +83,7 @@ RSpec.describe BunnyCdn::Pullzone do
         headers: {
           :content_type => 'application/json',
           :accept => 'application/json',
-          :accessKey => BunnyCdn.configuration.apiKey
+          :access_key => BunnyCdn.configuration.api_key
         }).once
     end
   end
@@ -94,7 +94,7 @@ RSpec.describe BunnyCdn::Pullzone do
       with(headers: {
         :content_type => 'application/json',
         :accept => 'application/json',
-        :accessKey => BunnyCdn.configuration.apiKey
+        :access_key => BunnyCdn.configuration.api_key
       }).to_return(status: 200)
     end
     it "deletes pullzone by ID" do
@@ -103,7 +103,7 @@ RSpec.describe BunnyCdn::Pullzone do
       with(headers: {
         :content_type => 'application/json',
         :accept => 'application/json',
-        :accessKey => BunnyCdn.configuration.apiKey
+        :access_key => BunnyCdn.configuration.api_key
       }).once
     end
   end
@@ -114,7 +114,7 @@ RSpec.describe BunnyCdn::Pullzone do
         with(headers: {
           :content_type => 'application/json',
           :accept => 'application/json',
-          :accessKey => BunnyCdn.configuration.apiKey
+          :access_key => BunnyCdn.configuration.api_key
         }).to_return(status: 200)
     end
     it "purges cache for the specified pullzone" do

@@ -5,18 +5,18 @@ require "bunny_cdn/version"
 Gem::Specification.new do |spec|
   spec.name          = "bunny_cdn"
   spec.version       = BunnyCdn::VERSION
-  spec.authors       = "Brandon Meeks"
-  spec.email         = "meeksb86@gmail.com"
+  spec.authors       = "Johnathan Lymam"
+  spec.email         = "email@johnathan.org"
 
   spec.summary       = %q{Gem to work with BunnyCDN}
   spec.description   = %q{This is a simple gem to help you work with BunnyCDN.}
-  spec.homepage      = "https://github.com/brandon-meeks/bunny_cdn_gem"
+  spec.homepage      = "https://github.com/johlym/bunny_cdn"
   spec.license       = "MIT"
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/brandon-meeks/bunny_cdn_gem"
+  spec.metadata["source_code_uri"] = "https://github.com/johlym/bunny_cdn"
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
