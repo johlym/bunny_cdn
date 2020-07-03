@@ -6,7 +6,7 @@ module BunnyCdn
     BASE_URL = 'https://storage.bunnycdn.com'
 
     def self.base_url
-      if BunnyCdn.configuration.region
+      if BunnyCdn.configuration.region != "eu"
         "https://#{BunnyCdn.configuration.region}.storage.bunnycdn.com"
       else
         "https://storage.bunnycdn.com"
@@ -23,7 +23,7 @@ module BunnyCdn
 
     def self.headers
       {
-        :access_key => api_key
+        :AccessKey => api_key
       }
     end
 
@@ -48,7 +48,7 @@ module BunnyCdn
     def self.uploadFile(path= '', file)
       fileName = File.basename(file)
       headers = {
-        :access_key => api_key,
+        :AccessKey => api_key,
         :checksum => ''
       }
       begin
