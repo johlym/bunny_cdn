@@ -1,28 +1,41 @@
 [![Gem Version](https://badge.fury.io/rb/bunny_cdn.svg)](https://badge.fury.io/rb/bunny_cdn)
-[![Codeship Status for brandon-meeks/bunny_cdn](https://app.codeship.com/projects/7f94a660-529a-0138-70bd-36e3badc0e07/status?branch=master)](https://app.codeship.com/projects/390509)
+[![Codeship Status for brandon-meeks/bunny_cdn](https://app.codeship.com/projects/7f94a660-529a-0138-70bd-36e3badc0e07/status?branch=master)](https://app.codeship.com/projects/401801)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2cc8e5b9529c32d7473f/maintainability)](https://codeclimate.com/github/brandon-meeks/bunny_cdn/maintainability)
 
 # BunnyCdn
 
-This gem allows you to interact with the BunnyCdn API. Currently you can interact with the Storage and Pullzone APIs.
+This gem allows you to interact with the Bunny CDN API. Currently you can interact with the Storage and Pullzone APIs.
 
 This does require you to have an account with [BunnyCDN](https://bunnycdn.com/).
+
+## Notes 
+
+* This is an updated version of the original `bunny_cdn` gemfile [created by @brandon-meeks](brandon-meeks/bunny_cdn). 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'bunny_cdn'
+gem 'bunny_cdn', git: 'https://github.com/johlym/bunny_cdn'
 ```
 
 And then execute:
 
-    $ bundle
+```sh
+$ bundle
+```
 
-Or install it yourself as:
+Or install it yourself with:
 
-    $ gem install bunny_cdn
+```sh
+git clone https://github.com/johlym/bunny_cdn
+cd bunny_cdn
+gem build bunny_cdn.gemspec
+gem install bunny_cdn-VERSION.gemspec
+```
+
+(where `VERSION` is the version number built.)
 
 ## Usage
 
@@ -35,6 +48,7 @@ BunnyCdn.configure do |config|
     config.api_key = # The API key for your BunnyCDN account
     config.storage_zone = # The storage zone you want to work with
     config.access_key = # The password for your storage zone
+    config.region = # The region in which the storage zone was originally created. If this is not set or is set to `eu`, the Gem will use the EU zone.
 end
 ```
 
@@ -46,7 +60,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/bunny_cdn. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/johlym/bunny_cdn. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -54,4 +68,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the BunnyCdn project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/bunny_cdn/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the BunnyCdn project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/johlym/bunny_cdn/blob/master/CODE_OF_CONDUCT.md).
