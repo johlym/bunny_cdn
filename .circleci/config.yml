@@ -14,5 +14,8 @@ jobs:
           command: bundle -v
       - ruby/bundle-install
       - run:
+          name: Pre-game testing
+          command: gem install rake -v 10.0 && gem install rspec -v 3.0
+      - run:
           name: Run Tests
-          command: rake spec
+          command: bundle exec rake spec
