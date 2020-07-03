@@ -9,6 +9,7 @@ RSpec.describe BunnyCdn::Configuration do
             config = BunnyCdn::Configuration.new
             expect(config.storage_zone).to eq(nil)
             expect(config.access_key).to eq(nil)
+            expect(config.region).to eq(nil)
         end
     end
 
@@ -17,8 +18,10 @@ RSpec.describe BunnyCdn::Configuration do
             config = BunnyCdn::Configuration.new
             config.storage_zone = 'test'
             config.access_key = 'test'
+            config.region = 'te'
             expect(config.storage_zone).to eq('test')
             expect(config.access_key).to eq('test')
+            expect(config.region).to eq('te')
         end
     end
 
@@ -27,11 +30,13 @@ RSpec.describe BunnyCdn::Configuration do
             BunnyCdn.configure do |config|
                 config.storage_zone = 'test'
                 config.access_key = 'test'
+                config.region = 'te'
             end
         end
         it "can read configuration values" do
             expect(BunnyCdn.configuration.storage_zone).to eq('test')
             expect(BunnyCdn.configuration.access_key).to eq('test')
+            expect(BunnyCdn.configuration.region).to eq('te')
         end
     end
 
