@@ -1,8 +1,6 @@
-[![Gem Version](https://badge.fury.io/rb/bunny_cdn.svg)](https://badge.fury.io/rb/bunny_cdn)
-[![Codeship Status for brandon-meeks/bunny_cdn](https://app.codeship.com/projects/7f94a660-529a-0138-70bd-36e3badc0e07/status?branch=master)](https://app.codeship.com/projects/401801)
-[![Maintainability](https://api.codeclimate.com/v1/badges/2cc8e5b9529c32d7473f/maintainability)](https://codeclimate.com/github/brandon-meeks/bunny_cdn/maintainability)
+[![Circle CI Status](https://circleci.com/gh/johlym/bunny_cdn.svg?style=svg)](https://app.codeship.com/projects/401801)
 
-# BunnyCdn
+# `bunny_cdn`
 
 This gem allows you to interact with the Bunny CDN API. Currently you can interact with the Storage and Pullzone APIs.
 
@@ -10,7 +8,7 @@ This does require you to have an account with [BunnyCDN](https://bunnycdn.com/).
 
 ## Notes 
 
-* This is an updated version of the original `bunny_cdn` gemfile [created by @brandon-meeks](brandon-meeks/bunny_cdn). 
+* This is an updated version of the original `bunny_cdn` gemfile [created by @brandon-meeks](brandon-meeks/bunny_cdn). If you use Non-EU storage zones, the original version will not work. 
 
 ## Installation
 
